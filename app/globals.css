@@ -1,26 +1,147 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
 @import "tailwindcss";
+@import "tw-animate-css";
 
+/* Defines a 'dark' variant that applies when the .dark class is present on an ancestor */
+@custom-variant dark (&:is(.dark *));
+
+/* Tailwind v4 Theme Configuration
+  All theme customizations (colors, spacing, fonts, etc.) are defined here.
+*/
+@theme {
+  /* Screens, spacing, etc. can be configured here if needed */
+  
+  /* Adding custom colors and extending the default theme */
+  --color-brand-primary: hsl(var(--brand-primary));
+  --color-brand-secondary: hsl(var(--brand-secondary));
+
+  /* Defining custom background images for gradients and glows */
+  --background-image-purple-gradient: radial-gradient(circle at 50% 50%, rgba(138, 43, 226, 0.2), rgba(10, 10, 25, 0) 70%);
+  --background-image-card-glow: radial-gradient(circle at 50% 50%, rgba(138, 43, 226, 0.15), rgba(10, 10, 25, 0) 60%);
+
+  /* Keyframes for animations (if not using tw-animate-css) */
+  --animation-keyframes-accordion-down: {
+    from: { height: 0; }
+    to: { height: var(--radix-accordion-content-height); }
+  };
+  --animation-keyframes-accordion-up: {
+    from: { height: var(--radix-accordion-content-height); }
+    to: { height: 0; }
+  };
+
+  /* Animation utilities */
+  --animation-accordion-down: accordion-down 0.2s ease-out;
+  --animation-accordion-up: accordion-up 0.2s ease-out;
+
+  /* Mapping shadcn/ui CSS variables to Tailwind's theme system.
+    This makes them available as utility classes (e.g., bg-background, text-foreground).
+  */
+  --color-background: hsl(var(--background));
+  --color-foreground: hsl(var(--foreground));
+  --color-card: hsl(var(--card));
+  --color-card-foreground: hsl(var(--card-foreground));
+  --color-popover: hsl(var(--popover));
+  --color-popover-foreground: hsl(var(--popover-foreground));
+  --color-primary: hsl(var(--primary));
+  --color-primary-foreground: hsl(var(--primary-foreground));
+  --color-secondary: hsl(var(--secondary));
+  --color-secondary-foreground: hsl(var(--secondary-foreground));
+  --color-muted: hsl(var(--muted));
+  --color-muted-foreground: hsl(var(--muted-foreground));
+  --color-accent: hsl(var(--accent));
+  --color-accent-foreground: hsl(var(--accent-foreground));
+  --color-destructive: hsl(var(--destructive));
+  --color-destructive-foreground: hsl(var(--destructive-foreground));
+  --color-border: hsl(var(--border));
+  --color-input: hsl(var(--input));
+  --color-ring: hsl(var(--ring));
+  
+  /* Border Radius */
+  --radius: 0.75rem;
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+}
+
+/* Base CSS variables for shadcn/ui components (light/default theme)
+  These define the HSL values for our color palette.
+*/
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --background: 260 40% 4%; /* #05020a */
+  --foreground: 0 0% 98%; /* #fafafa */
+  --card: 260 40% 6%;
+  --card-foreground: 0 0% 98%;
+  --popover: 260 40% 4%;
+  --popover-foreground: 0 0% 98%;
+  --primary: 0 0% 98%;
+  --primary-foreground: 260 40% 4%;
+  --secondary: 240 3.7% 15.9%;
+  --secondary-foreground: 0 0% 98%;
+  --muted: 240 3.7% 15.9%;
+  --muted-foreground: 240 5% 64.9%;
+  --accent: 270 95% 55%; /* Bright Purple */
+  --accent-foreground: 0 0% 98%;
+  --destructive: 0 62.8% 30.6%;
+  --destructive-foreground: 0 0% 98%;
+  --border: 240 3.7% 15.9%;
+  --input: 240 3.7% 15.9%;
+  --ring: 270 95% 65%;
+  --radius: 0.75rem;
+  --brand-primary: 265 89% 65%; /* #8A2BE2 - BlueViolet */
+  --brand-secondary: 260 20% 12%; /* Darker purple */
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+/* Dark theme overrides. The `.dark` class is applied to the root element.
+  In this case, they are the same as the default :root since it's a dark-only design.
+*/
+.dark {
+  --background: 260 40% 4%;
+  --foreground: 0 0% 98%;
+  --card: 260 40% 6%;
+  --card-foreground: 0 0% 98%;
+  --popover: 260 40% 4%;
+  --popover-foreground: 0 0% 98%;
+  --primary: 0 0% 98%;
+  --primary-foreground: 260 40% 4%;
+  --secondary: 240 3.7% 15.9%;
+  --secondary-foreground: 0 0% 98%;
+  --muted: 240 3.7% 15.9%;
+  --muted-foreground: 240 5% 64.9%;
+  --accent: 270 95% 55%;
+  --accent-foreground: 0 0% 98%;
+  --destructive: 0 62.8% 30.6%;
+  --destructive-foreground: 0 0% 98%;
+  --border: 240 3.7% 15.9%;
+  --input: 240 3.7% 15.9%;
+  --ring: 270 95% 65%;
+  --brand-primary: 265 89% 65%;
+  --brand-secondary: 260 20% 12%;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+/* Base layer styles */
+@layer base {
+  * {
+    @apply border-border;
   }
-}
+  body {
+    @apply bg-background text-foreground;
+  }
 
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  /* Custom glow effect for the hero section */
+  .hero-glow::before {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 800px;
+    height: 800px;
+    background: radial-gradient(
+      circle,
+      rgba(138, 43, 226, 0.25) 0%,
+      transparent 60%
+    );
+    transform: translate(-50%, -50%);
+    z-index: -1;
+    pointer-events: none;
+  }
 }
