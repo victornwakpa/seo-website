@@ -5,10 +5,10 @@ import PartnersSection from "@/components/partners-section";
 
 export default function Home() {
   return (
-    <div className="mt-[90px]">
+    <div className="mt-[90px] bg-[#020103]">
       <Header />
       <HeroSection />
-      <PartnersSection />
+      {/* <PartnersSection /> */}
       {/* <UnseoLandingPage /> */}
     </div>
   )
