@@ -5,6 +5,7 @@ import FeaturesSection from "@/components/features";
 import MoreFeaturesSection from "@/components/more-features";
 import TestimonialsSection from "@/components/testimonials-section";
 import PricingSection from '@/components/pricing-section';
+import WaitlistSection from '@/components/waitlist-section';
 
 export default function Home() {
   return (
@@ -16,6 +17,7 @@ export default function Home() {
       <MoreFeaturesSection />
       <TestimonialsSection />
       <PricingSection />
+      <WaitlistSection />
     </div>
   )
 }
