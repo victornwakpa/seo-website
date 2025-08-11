@@ -1,9 +1,10 @@
-import UnseoLandingPage from "./test";
 import Header from "@/components/header";
 import HeroSection from "@/components/hero-section";
 import PartnersSection from "@/components/partners-section";
 import FeaturesSection from "@/components/features";
 import MoreFeaturesSection from "@/components/more-features";
+import TestimonialsSection from "@/components/testimonials-section";
+import PricingSection from '@/components/pricing-section';
 
 export default function Home() {
   return (
@@ -13,7 +14,8 @@ export default function Home() {
       <PartnersSection />
       <FeaturesSection />
       <MoreFeaturesSection />
-      {/* <UnseoLandingPage /> */}
+      <TestimonialsSection />
+      <PricingSection />
     </div>
   )
 }
