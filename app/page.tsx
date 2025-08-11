@@ -8,7 +8,7 @@ export default function Home() {
     <div className="mt-[90px] bg-[#020103]">
       <Header />
       <HeroSection />
-      {/* <PartnersSection /> */}
+      <PartnersSection />
       {/* <UnseoLandingPage /> */}
     </div>
   )

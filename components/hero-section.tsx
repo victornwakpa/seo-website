@@ -26,7 +26,7 @@ export default function HeroSection() {
           transform: 'translate(-50%, -50%)',
         }}
       ></div>
-      <div className="container z-20 mx-auto max-w-7xl px-4">
+      <div className="container z-10 mx-auto max-w-7xl px-4">
         <div className="flex flex-col items-center justify-center">
           <div className="mb-6 inline-flex items-center justify-center rounded-[40px] border border-white/15 px-3.5 py-2">
             <span className="mr-2 rounded-full bg-[#9855FF] px-2.5 py-0.5 text-[10px] font-bold text-black">
@@ -59,6 +59,13 @@ export default function HeroSection() {
         </div>
         
       </div>
+      {/* Fade out gradient */}
+      <div 
+        className="absolute z-20 bottom-0 left-0 right-0 h-[308px]"
+        style={{
+          background: 'linear-gradient(180deg, rgba(0, 0, 0, 0.00) 3.8%, #050208 86.04%)',
+        }}
+      ></div>
     </section>
   );
 }
