@@ -14,7 +14,7 @@ const partners = [
 export default function PartnersSection() {
   return (
     <section className="py-12 sm:py-16 lg:py-20">
-      <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
+      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div className="text-center">
           <h2 className="text-base tracking-widest text-white/70">
             Trusted by the world's most innovative teams
