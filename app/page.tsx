@@ -3,6 +3,7 @@ import Header from "@/components/header";
 import HeroSection from "@/components/hero-section";
 import PartnersSection from "@/components/partners-section";
 import FeaturesSection from "@/components/features";
+import MoreFeaturesSection from "@/components/more-features";
 
 export default function Home() {
   return (
@@ -11,6 +12,7 @@ export default function Home() {
       <HeroSection />
       <PartnersSection />
       <FeaturesSection />
+      <MoreFeaturesSection />
       {/* <UnseoLandingPage /> */}
     </div>
   )
