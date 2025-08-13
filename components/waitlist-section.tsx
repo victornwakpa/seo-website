@@ -3,7 +3,7 @@ import { cn } from "@/lib/utils";
 
 export default function WaitlistSection() {
   return (
-    <section className="container mx-auto max-w-7xl pt-4 pb-16 sm:pb-20 lg:pb-18">
+    <section className="container mx-auto max-w-7xl pt-4 pb-16.5 sm:pb-20 lg:pb-18">
       <div className="relative border border-white/10 overflow-hidden rounded-[10px] py-16 sm:py-20 lg:py-28">
         <div className="absolute z-10 inset-0">
           <GridPattern
