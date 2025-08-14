@@ -115,7 +115,7 @@ export default function PricingSection() {
                   ))}
                 </ul>
                 <button
-                  className={`mt-10 w-full rounded-[10px] border border-white/15 py-3 font-medium shadow-[inset_0_0_6px_3px_rgba(255,255,255,0.25)] backdrop-blur-[7px] ${plan.isHighlighted ? "bg-[#8C45FF]/40" : "bg-[#3D3D3D]/40"}`}
+                  className={`mt-10 w-full rounded-[10px] border border-white/15 py-3 font-medium shadow-[inset_0_0_6px_3px_rgba(255,255,255,0.25)] backdrop-blur-[7px] transition-colors ${plan.isHighlighted ? "bg-[#8C45FF]/40 hover:bg-[#8C45FF]/60" : "bg-[#3D3D3D]/40 hover:bg-[#3D3D3D]/60"}`}
                 >
                   Join waitlist
                 </button>
